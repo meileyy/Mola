@@ -19,7 +19,7 @@ Film, dizi ve kitapları tek bir listede takip etmeyi sağlayan tek sayfalık bi
 
 - **React** (fonksiyonel bileşenler ve hook'lar)
 - **Vite** (geliştirme ve derleme)
-- **JavaScript** (TypeScript kullanılmaz)
+- **JavaScript** 
 - **Bootstrap 5.3** + **Bootstrap Icons**
 - Veri saklama: tarayıcı **LocalStorage**
 
@@ -27,6 +27,7 @@ Film, dizi ve kitapları tek bir listede takip etmeyi sağlayan tek sayfalık bi
 
 ```
 mola/
+├── docs/                # ekran görüntüleri
 ├── public/              # statik dosyalar (favicon)
 ├── src/
 │   ├── Components/       # Header, ThemeToggle, WatchItemCard, WatchItemForm, FilterBar, ConfirmDialog
@@ -80,8 +81,16 @@ Tema tercihi ayrı bir anahtarda (`mola-theme`) tutulur; bu, kayıt verisini etk
 
 Veriler yalnızca o tarayıcıda ve o cihazda tutulduğu için tarayıcı verileri temizlendiğinde kayıtlar da silinir.
 
-## Ekran Görüntüsü
+## Ekran Görüntüleri
 
-> Buraya uygulamanın bir ekran görüntüsü eklenecek.
->
-> Örnek: `![Mola ekran görüntüsü](docs/screenshot.png)`
+### Ana ekran — açık tema
+![Mola ana ekran açık tema](docs/ana-ekran-acik.png)
+
+### Ana ekran — koyu tema
+![Mola ana ekran koyu tema](docs/ana-ekran-koyu.png)
+
+### Arama ve filtreleme
+![Mola arama ve filtreleme](docs/filtre.png)
+
+### Yeni kayıt ekleme
+![Mola yeni kayıt ekleme](docs/yeni-kayit.png)

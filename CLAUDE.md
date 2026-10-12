@@ -1,6 +1,6 @@
 # Ajan Talimatları
 
-> Bu dosya CLAUDE.md, AGENTS.md ve GEMINI.md olarak aynen kopyalanabilir; böylece aynı talimatlar hangi yapay zekâ aracında çalışılırsa çalışılsın yüklenir.
+> Bu dosya CLAUDE.md dosyasıdır.
 
 Bu proje, "Web Geliştirme; Javascript Proje Yönergesi" kapsamında hazırlanan **Mola** adlı bir **Film, Dizi & Kitap Takip Listesi** uygulamasıdır. Amaç modern web dünyasına girişi hızlandırmak ve eğitimde öğrenilenleri pekiştirmektir. Bu nedenle kod **basit, okunabilir ve öğretici** olmalıdır. Zeki ama karmaşık çözümler yerine, bir öğrencinin okuyup anlayabileceği çözümler tercih edilir.
 
