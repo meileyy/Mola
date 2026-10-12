@@ -32,8 +32,9 @@ export default function FilterBar({
   const statusId = `${uid}-status`
 
   return (
-    <div className="row g-2 align-items-end mb-3">
-      <div className="col-12 col-md-6 col-lg-5">
+    <div className="filter-bar mb-3">
+      <div className="row g-2 align-items-end">
+        <div className="col-12 col-md-6 col-lg-5">
         <label htmlFor={searchId} className="form-label small mb-1">
           Ara
         </label>
@@ -88,10 +89,11 @@ export default function FilterBar({
         </select>
       </div>
 
-      <div className="col-12 col-lg-1 d-grid">
-        <button type="button" className="btn btn-outline-secondary" onClick={onClear}>
-          Temizle
-        </button>
+        <div className="col-12 col-lg-1 d-grid">
+          <button type="button" className="btn btn-outline-secondary" onClick={onClear}>
+            Temizle
+          </button>
+        </div>
       </div>
     </div>
   )

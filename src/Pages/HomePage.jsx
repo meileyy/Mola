@@ -74,8 +74,8 @@ export default function HomePage() {
 
   return (
     <main className="container pb-5">
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <h2 className="h5 mb-0">Listem</h2>
+      <div className="d-flex justify-content-between align-items-center mb-3 gap-2">
+        <h2 className="h4 mb-0 section-title">Listem</h2>
         <button type="button" className="btn btn-primary" onClick={openAdd}>
           <i className="bi bi-plus-lg me-1" aria-hidden="true"></i>
           Yeni Kayıt
@@ -84,8 +84,10 @@ export default function HomePage() {
 
       {items.length === 0 ? (
         // Hiç kayıt yok: ilk kaydı eklemeye yönlendiren boş görünüm
-        <div className="text-center text-secondary py-5">
-          <i className="bi bi-collection fs-1 d-block mb-2" aria-hidden="true"></i>
+        <div className="empty-state">
+          <span className="empty-icon">
+            <i className="bi bi-collection" aria-hidden="true"></i>
+          </span>
           <p className="mb-1 fw-semibold">Henüz kayıt yok</p>
           <p className="mb-3 small">İlk film, dizi veya kitabını ekleyerek başla.</p>
           <button type="button" className="btn btn-outline-primary" onClick={openAdd}>
@@ -110,8 +112,10 @@ export default function HomePage() {
 
           {visibleItems.length === 0 ? (
             // Kayıt var ama arama/filtre sonucu boş
-            <div className="text-center text-secondary py-5">
-              <i className="bi bi-search fs-1 d-block mb-2" aria-hidden="true"></i>
+            <div className="empty-state">
+              <span className="empty-icon">
+                <i className="bi bi-search" aria-hidden="true"></i>
+              </span>
               <p className="mb-1 fw-semibold">Eşleşen kayıt bulunamadı</p>
               <p className="mb-3 small">Arama veya filtreleri değiştirmeyi dene.</p>
               <button type="button" className="btn btn-outline-secondary" onClick={clearFilters}>

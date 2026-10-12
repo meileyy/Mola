@@ -1,22 +1,147 @@
-/* Inter gövde + Playfair başlık: markaya editorial bir hava katar. */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+/* === Mola görsel kimliği ===
+   Sıcak terracotta marka rengi ("mola" = kahve molası hissi).
+   CRUD/tema/mantık dosyaları değişmez; buradaki her şey yalnızca görseldir. */
+
+/* Başlıklar için tek Google Fonts yazı tipi: Fraunces (sıcak, karakterli) */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
+
+:root {
+  /* Marka: solid butonlarda beyaz metinle kullanılır (kontrast ~4.8:1) */
+  --mola-brand: #c2410c;
+  --mola-brand-rgb: 194, 65, 12;
+  --mola-brand-hover: #9a3412;
+  /* Çizgi / kenar / odak vurgusu (açık tema) */
+  --mola-accent: #c2410c;
+  --mola-accent-rgb: 194, 65, 12;
+
+  /* Bootstrap primary'yi markaya bağla: bağlantılar, odak halkaları vb. */
+  --bs-primary: var(--mola-brand);
+  --bs-primary-rgb: var(--mola-brand-rgb);
+  --bs-link-color-rgb: var(--mola-accent-rgb);
+  --bs-link-hover-color-rgb: var(--mola-brand-rgb);
+}
+
+[data-bs-theme='dark'] {
+  /* Koyu zeminde okunur kalması için vurgu daha açık turuncu */
+  --mola-accent: #fb923c;
+  --mola-accent-rgb: 251, 146, 60;
+  --bs-primary: var(--mola-accent);
+  --bs-primary-rgb: var(--mola-accent-rgb);
+  --bs-link-color-rgb: var(--mola-accent-rgb);
+}
 
 body {
   min-height: 100vh;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Marka adı başlığı diğer başlıklardan ayrışsın */
-.brand-title {
-  font-family: 'Playfair Display', serif;
+/* Marka adı ve ana bölüm başlığı karakterli yazı tipiyle ayrışsın */
+.brand-title,
+.section-title {
+  font-family: 'Fraunces', Georgia, serif;
+  letter-spacing: -0.01em;
 }
 
-/* Kartlara hafif yükselme efekti; hareket azaltma tercihine saygı duyar */
+/* --- Marka butonları (Bootstrap buton değişkenleriyle) --- */
+.btn-primary {
+  --bs-btn-bg: var(--mola-brand);
+  --bs-btn-border-color: var(--mola-brand);
+  --bs-btn-hover-bg: var(--mola-brand-hover);
+  --bs-btn-hover-border-color: var(--mola-brand-hover);
+  --bs-btn-active-bg: var(--mola-brand-hover);
+  --bs-btn-active-border-color: var(--mola-brand-hover);
+  --bs-btn-disabled-bg: var(--mola-brand);
+  --bs-btn-disabled-border-color: var(--mola-brand);
+  --bs-btn-focus-shadow-rgb: var(--mola-brand-rgb);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--mola-accent);
+  --bs-btn-border-color: var(--mola-accent);
+  --bs-btn-hover-bg: var(--mola-brand);
+  --bs-btn-hover-border-color: var(--mola-brand);
+  --bs-btn-active-bg: var(--mola-brand);
+  --bs-btn-active-border-color: var(--mola-brand);
+  --bs-btn-focus-shadow-rgb: var(--mola-accent-rgb);
+}
+
+/* Form odak rengini de markaya uydur */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--mola-accent);
+  box-shadow: 0 0 0 0.25rem rgba(var(--mola-accent-rgb), 0.25);
+}
+
+/* --- Üst başlık --- */
+.app-header {
+  border-bottom: 1px solid var(--bs-border-color);
+  background: var(--bs-body-bg);
+}
+
+/* Logo: marka renkli, yuvarlatılmış ikon chip */
+.mola-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--mola-brand);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+/* --- Arama / filtre paneli --- */
+.filter-bar {
+  background: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.85rem;
+  padding: 1rem;
+}
+
+/* --- Kartlar --- */
+.card {
+  border-radius: 0.85rem;
+  border-color: var(--bs-border-color);
+}
+
+.card .card-title {
+  font-weight: 600;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .card {
-    transition: transform 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .card:hover {
-    transform: translateY(-2px);
-  }
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.12);
+}
+
+/* Rozetler biraz daha belirgin */
+.badge {
+  font-weight: 600;
+}
+
+/* --- Boş / sonuç bulunamadı durumları --- */
+.empty-state {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--bs-secondary-color);
+}
+
+.empty-state .empty-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: var(--bs-tertiary-bg);
+  color: var(--mola-accent);
+  margin-bottom: 0.75rem;
 }

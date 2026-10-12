@@ -20,10 +20,23 @@ export function getStatusLabel(type, status) {
 }
 
 // Her türün rozet metni, Bootstrap renk sınıfı ve ikonu (emoji yerine vektör ikon).
+// Yumuşak (subtle) rozetler; iki temada da otomatik uyumludur.
 const TYPE_BADGES = {
-  movie: { label: 'Film', className: 'text-bg-danger', icon: 'bi-film' },
-  series: { label: 'Dizi', className: 'text-bg-primary', icon: 'bi-tv' },
-  book: { label: 'Kitap', className: 'text-bg-success', icon: 'bi-book' },
+  movie: {
+    label: 'Film',
+    className: 'bg-danger-subtle text-danger-emphasis border border-danger-subtle',
+    icon: 'bi-film',
+  },
+  series: {
+    label: 'Dizi',
+    className: 'bg-info-subtle text-info-emphasis border border-info-subtle',
+    icon: 'bi-tv',
+  },
+  book: {
+    label: 'Kitap',
+    className: 'bg-success-subtle text-success-emphasis border border-success-subtle',
+    icon: 'bi-book',
+  },
 }
 
 /**
@@ -34,7 +47,7 @@ export function getTypeBadge(type) {
   return (
     TYPE_BADGES[type] || {
       label: type,
-      className: 'text-bg-secondary',
+      className: 'bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle',
       icon: 'bi-question-circle',
     }
   )
@@ -42,9 +55,9 @@ export function getTypeBadge(type) {
 
 // Durum rozetinin rengi (türden bağımsız, sadece duruma göre).
 const STATUS_VARIANTS = {
-  planned: 'text-bg-secondary',
-  'in-progress': 'text-bg-warning',
-  done: 'text-bg-success',
+  planned: 'bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle',
+  'in-progress': 'bg-warning-subtle text-warning-emphasis border border-warning-subtle',
+  done: 'bg-success-subtle text-success-emphasis border border-success-subtle',
 }
 
 /**
