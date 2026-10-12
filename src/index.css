@@ -1,0 +1,22 @@
+/* Inter gövde + Playfair başlık: markaya editorial bir hava katar. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+body {
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Marka adı başlığı diğer başlıklardan ayrışsın */
+.brand-title {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Kartlara hafif yükselme efekti; hareket azaltma tercihine saygı duyar */
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    transition: transform 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+  }
+}
